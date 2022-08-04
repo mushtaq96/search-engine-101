@@ -1,0 +1,4 @@
+Using a supervised learning method or learning algorithm, 
+we wish to learn a classifier or classification function 
+that maps documents to classes.
+

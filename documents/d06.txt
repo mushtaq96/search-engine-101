@@ -1,0 +1,3 @@
+In text classification, we are given a description 
+of a document and a fixed set of classes.
+

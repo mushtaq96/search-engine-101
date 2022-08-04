@@ -1,0 +1,5 @@
+For English, an alternative to making every token lowercase 
+is to just make some tokens lowercase. The simplest heuristic
+is to convert to lowercase words at the beginning of a 
+sentence and all words occurring in a title that is all
+uppercase or in which most or all words are capitalized.

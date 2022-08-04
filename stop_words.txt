@@ -1,0 +1,3 @@
+'a', 'also', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'do',
+'for', 'have', 'is', 'in', 'it', 'of', 'or', 'see', 'so',
+'that', 'the', 'this', 'to', 'we'

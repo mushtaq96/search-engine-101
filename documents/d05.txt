@@ -1,0 +1,3 @@
+Index the documents that each term occurs in by 
+creating an inverted index, consisting of a 
+dictionary and postings.

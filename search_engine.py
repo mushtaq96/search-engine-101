@@ -13,7 +13,6 @@ with open('stop_words.txt') as f:
         new_line = line.strip()
         new_line = new_line.translate(str.maketrans('', '', string.punctuation)).lower();
         processed_doc.append(new_line)
-
     stop_words = []
     for line in processed_doc:
         stop_words.extend(line.split())
@@ -26,24 +25,21 @@ dataset = []
 for file in files:
     path = f"{cwd}/documents/{file}"
     with open(path) as f:
-        # dataset.append(f.readlines())
-        for line in f:
-            dataset.append(line)
-
-# print(dataset) #has all the files text in a single list
+        dataset.append(f.readlines())
+    print('Number of documents ', len(dataset), dataset) # has all the files text in a single list
 
 #preprossing the data
 sentences = []
 word_set = []
-
-for sent in dataset:
-    # divide strings into lists of substrings
-    x = [i.lower() for i in word_tokenize(sent) if i.isalpha()]
-    sentences.append(x) 
-    for word in x:
-        # capture unique words 
-        if word not in word_set:
-            word_set.append(word)
+for document in dataset:
+    for sent in document: 
+        # divide strings into lists of substrings
+        x = [i.lower() for i in word_tokenize(sent) if i.isalpha()]
+        sentences.append(x) 
+        for word in x:
+            # capture unique words 
+            if word not in word_set:
+                word_set.append(word)
 
 print(len(sentences))
 # print(word_set) 
@@ -69,8 +65,8 @@ for word in lemmatized_word_set:
     stem_word_list.append(porter_stemmer.stem(word))
 # print(stem_word_list)
 
-word_set = set(stem_word_list)
-total_documents=8;
+# word_set = set(stem_word_list)
+# total_documents=8;
 # index_dict = {}
 # i = 0
 # for word in stem_word_list:
@@ -78,15 +74,28 @@ total_documents=8;
 #     i+=1
 # print(index_dict)
 
-def count_dict(sentences):
+# def count_dict(sentences):
+#     word_count = {}
+#     for word in word_set:
+#         word_count[word] = 0
+#         for sent in sentences:
+#             if word in sent:
+#                 word_count[word] += 1
+#     return word_count
+# word_count = count_dict(sentences)
+
+def count_dict(list):
     word_count = {}
-    for word in word_set:
-        word_count[word] = 0
-        for sent in sentences:
-            if word in sent:
-                word_count[word] += 1
+    for word in list:
+        
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 0
     return word_count
-word_count = count_dict(sentences)
+    
+word_count = count_dict(stem_word_list)
+print(word_count)
 
 def term_freq(document, word):
     N = len(document)

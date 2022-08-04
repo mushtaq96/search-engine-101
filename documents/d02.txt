@@ -1,0 +1,4 @@
+Token normalization is the process of canonicalizing <br>
+tokens so that matches occur despite superficial <br>
+differences in the character sequences of the tokens. <br>
+

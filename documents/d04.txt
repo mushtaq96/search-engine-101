@@ -1,0 +1,7 @@
+To gain the speed benefits of indexing at retrieval time, 
+we have to build the index in advance. The major steps 
+in this are: Collect the documents to be indexed, 
+tokenize the text, turning each document into a 
+list of tokens, do linguistic preprocessing, 
+producing a list of normalized tokens, 
+which are the indexing term.
